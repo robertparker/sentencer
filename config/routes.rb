@@ -1,5 +1,6 @@
 Sentencer::Application.routes.draw do
   root :to => "home#index"
+resources :sentences, :only => [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -16,7 +17,7 @@ Sentencer::Application.routes.draw do
   #   resources :products
 
   # Sample resource route with options:
-  #   resources :products do
+    # resources :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
