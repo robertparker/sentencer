@@ -1,2 +1,16 @@
-<h1> ahhh!!!! </h1>
-<%= @sentences %>
+<h1> this is every sentence I wrote in college. </h1>
+<%= link_to "get a sentence!", "#sentence", :id =>"the-button" %>
+<%= link_to "expand", "#context", :id =>"the-context" %>
+<% array = @sentences.shuffle[0..50] %>
+<% index = 0 %> 
+<% grouping = 0 %>
+<% array.each do  |sentence| %>
+	<% sentenceminus = @sentences[(sentence.sequence-2)] %>
+	<% sentenceplus = @sentences[(sentence.sequence)] %>
+ <p class="sentence" data-index = "<%= index += 1 %>" data-grouping="<%= grouping +=1 %>" data-sequence="<%= sentence.sequence %>" data-source="<%= sentenceminus.source %>" id="false">
+ <%= sentenceminus.text %> </p>  
+	<p class="sentence" data-index = "<%= index+=1 %>" data-grouping="<%= grouping %>" data-sequence="<%= sentence.sequence %>"  data-source="<%= sentence.source %>" id="false">
+		<%= sentence.text %> </p> 
+<p class="sentence" data-index = "<%= index +=1 %>" data-grouping="<%= grouping %>" data-sequence="<%= sentence.sequence %>" data-source="<%= sentenceplus.source %>" id="false"> 
+ <%= sentenceplus.text %> </p>  
+<% end %> 

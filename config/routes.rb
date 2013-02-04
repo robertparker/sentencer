@@ -1,5 +1,5 @@
 Sentencer::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "sentences#index"
 resources :sentences, :only => [:index, :show]
 
   # The priority is based upon order of creation:
