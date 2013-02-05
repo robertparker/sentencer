@@ -2,9 +2,13 @@ $(document).ready(function() {
 
 	$randgroup = 0
 	$randindex = 0
+	$counter = 0  //gotta be a better way to do this. 
+
+// add text in $randindex to first div, then.
 
 	$( "#the-button" ).click(function( event ) {
 		event.preventDefault();
+		$counter = 0
 		getRandNum()
 		showSentence($randindex);
 		console.log('randgroup is '+ $randgroup + ', randinindex is '+$randindex);
@@ -15,6 +19,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		showGrouping($randgroup)
 		console.log('context: randgroup is '+$randgroup)
+
 	});
 
 
@@ -26,11 +31,30 @@ $(document).ready(function() {
 		
 	};
 
-
+		
+	
 	function showGrouping($randgroup){
-		$(".sentence").hide()
-		$(".sentence[data-grouping=" + $randgroup + "]").show()
+		if($counter == 0) {
+				$counter ++
+			$(".sentence").hide()
+	 		// $(".sentence[data-grouping=" + $randgroup + "]").show()
+			$(".sentence[data-index=" + $randindex + "]").append($(".sentence[data-index=" + ($randindex + 1) + "]").text())
+			$(".sentence[data-index=" + $randindex + "]").prepend($(".sentence[data-index=" + ($randindex - 1) + "]").text())
+			$(".sentence[data-index=" + $randindex + "]").show()
+		}
+		else {
+
+		}
+	// var block = $(".sentence[data-index=" + $randindex + "]");
+	// 	block.css("height", block.height());
+	//     block.children().append($(".sentence[data-index=" + ($randindex + 1) + "]");
+ //    block.animate({
+ //        height: block.children().height()
+ //    })
+    // http://stackoverflow.com/questions/10565832/div-append-text-with-an-animation is how to do this.
+	
 	};
+
 
 
 	function getRandNum() {
