@@ -3,24 +3,68 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// thanks to http://eclipsecolorthemes.org/?view=theme&id=66 for the sublime text color themes
+
+
 body {
 	text-align:center;
 	vertical-align:middle;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   		   	font-family: Consolas,
+             "Lucida Console",
+             Monaco,
+             monospace;
    	font-weight: 300;
    	color: rgb(38,38,38);
+   	 position:absolute;
+    top:15%;
+    right:25%;
+    bottom:25%;
+    left:25%;
+    background:#272822;
 }
 
-.sentence { 
 
-			
-			}
+h1 {
+	color:rgb(139,137,137);
+	color:#FF007F;
+	font-weight:420;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
 
-#false {
+#the-button {
+	color:#52E3F6;
+	font-style:italic;
+	text-decoration: none;
+}
+
+#the-context {
+	color:#A7EC21;
+	font-style:italic;
+	text-decoration: none;
+}
+
+
+#sentenceview {	
+	text-align:center;
+	margin-right: auto;
+	margin-left: auto;
+	width:600px;
+	color:#C48CFF;
+	   	font-family: Consolas,
+             "Lucida Console",
+             Monaco,
+             monospace;
+	border-left:thin #5B5A4E;
+	border-left-style:dotted;
+	padding-left: 4px;
+	font-size:16px;
+}
+
+.sentence {
 	display:none;
 }
 
-#true {
-	display:block;
+#sentenceview span {
+	color:rgb(139,137,137);
+	color:#ECE47E;
 }
-
