@@ -12,5 +12,4 @@
 
 // = require jquery
 // = require jquery_ujs
-// = require sentences
- require_tree .
+// require_tree .

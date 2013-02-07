@@ -29,7 +29,7 @@ $(document).ready(function() {
 		};
 
 		function addSentence(number) {
-			$("#sentenceview").append("<span>" + $(".sentence[data-index=" + number + "]").text() + "</span>").show()
+			var item = $("#sentenceview").append("<span>" + $(".sentence[data-index=" + number + "]").text() + "</span>").show()
 		}
 
 		function removeSentence() {
