@@ -26,9 +26,9 @@ class Sentence < ActiveRecord::Base
 
   end
 
-  
+	private
 
-
-
+		def sanitize_sentence(sentence)
+		end
 
 end
