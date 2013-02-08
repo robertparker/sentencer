@@ -4,7 +4,12 @@
 <br />
 <br />
 <p id="sentenceview"><span></span></p>
-<% array = @sentences.shuffle[0..50] %>
+<% 	n = @sentences.count %>
+<%   	if n >= 50 %>
+<%   		array = @sentences.shuffle[0..50] %>
+<%   	else %>
+<%   		array = @sentence.shuffle[0..(n-1)] %>
+<% 		end %>
 <% index = 0 %> 
 <% grouping = 0 %>
 <% array.each do  |sentence| %>
