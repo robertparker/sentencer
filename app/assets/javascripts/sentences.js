@@ -61,8 +61,9 @@ $(document).ready(function() {
 
 
 		function getRandNum() {
-				$randgroup = Math.ceil(Math.random()*50)
+				$randgroup = Math.ceil(Math.random()*$('.sentence:last').attr('data-grouping'))
 				$randindex = 3*$randgroup-1;
+				console.log('length is '+$('.sentence:last').attr('data-grouping'))
 				
 		};
 
