@@ -6,5 +6,7 @@ class CreateSentences < ActiveRecord::Migration
       t.integer :sequence
       t.timestamps
     end
+
+    change_column :sentences, :text, :text
   end
 end
