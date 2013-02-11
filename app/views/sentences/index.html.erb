@@ -18,8 +18,9 @@
 	<% sentenceplus = @sentences[(sentence.sequence)] %>
 
 	<!-- add groupings together, if they exist -->
+<% grouping += 1 %>
 <% if !sentenceminus.nil? && sentenceminus.source == sentence.source %>
-	 <p class="sentence" data-index = "<%= index += 1 %>" data-grouping="<%= grouping +=1 %>" data-sequence="<%= sentenceminus.sequence %>" data-source="<%= sentenceminus.source %>">
+	 <p class="sentence" data-index = "<%= index += 1 %>" data-grouping="<%= grouping %>" data-sequence="<%= sentenceminus.sequence %>" data-source="<%= sentenceminus.source %>">
  <%= sentenceminus.text %> </p>  
  <% end %>
 
