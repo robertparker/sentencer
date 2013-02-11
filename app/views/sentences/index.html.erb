@@ -16,11 +16,21 @@
 <% array.each do  |sentence| %>
 	<% sentenceminus = @sentences[(sentence.sequence-2)] %>
 	<% sentenceplus = @sentences[(sentence.sequence)] %>
- <p class="sentence" data-index = "<%= index += 1 %>" data-grouping="<%= grouping +=1 %>" data-sequence="<%= sentenceminus.sequence %>" data-source="<%= sentenceminus.source %>">
+
+	<!-- add groupings together, if they exist -->
+<% if !sentenceminus.nil? && sentenceminus.source == sentence.source %>
+	 <p class="sentence" data-index = "<%= index += 1 %>" data-grouping="<%= grouping +=1 %>" data-sequence="<%= sentenceminus.sequence %>" data-source="<%= sentenceminus.source %>">
  <%= sentenceminus.text %> </p>  
+ <% end %>
+
 	<p class="sentence" data-index = "<%= index+=1 %>" data-grouping="<%= grouping %>" data-sequence="<%= sentence.sequence %>"  data-source="<%= sentence.source %>">
 		<%= sentence.text %> </p> 
+
+<% if !sentenceplus.nil? && sentenceplus.source == sentence.source %>
 <p class="sentence" data-index = "<%= index +=1 %>" data-grouping="<%= grouping %>" data-sequence="<%= sentenceplus.sequence %>" data-source="<%= sentenceplus.source %>"> 
  <%= sentenceplus.text %> </p>  
+<% end %> 
+
+
 <% end %> 
 <% end %> 
