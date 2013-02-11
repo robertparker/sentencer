@@ -33,8 +33,13 @@ $(document).ready(function() {
 			if($counter == 0) {
 					$counter ++
 				$("#sentenceview").hide()
-				$("#sentenceview").append($(".sentence[data-index=" + ($randindex + 1) + "]").text())
-				$("#sentenceview").prepend($(".sentence[data-index=" + ($randindex - 1) + "]").text())
+				
+				if($(".sentence[data-index=" + ($randindex + 1) + "]").attr('data-grouping')== $randgroup) {					
+					$("#sentenceview").append($(".sentence[data-index=" + ($randindex + 1) + "]").text())
+				}
+				if($(".sentence[data-index=" + ($randindex - 1) + "]").attr('data-grouping')== $randgroup) {
+					$("#sentenceview").prepend($(".sentence[data-index=" + ($randindex - 1) + "]").text())					
+				}
 				$("#sentenceview").show().slideDown()
 			}
 			else {
