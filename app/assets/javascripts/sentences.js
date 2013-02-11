@@ -21,15 +21,8 @@ $(document).ready(function() {
 		console.log('context: randgroup is '+$randgroup)
 	});
 
-
-
-		function showSentence(number){
-			$(".sentence").hide()
-			$(".sentence[data-index=" + number + "]").show()			
-		};
-
 		function addSentence(number) {
-			var item = $("#sentenceview").append("<span>" + $(".sentence[data-index=" + number + "]").text() + "</span>").show()
+			var item = $("#sentenceview").append("<span>" + $(".sentence[data-index=" + number + "]").text() + "</span>").hide().fadeIn(200)
 		}
 
 		function removeSentence() {
@@ -43,9 +36,6 @@ $(document).ready(function() {
 				$("#sentenceview").append($(".sentence[data-index=" + ($randindex + 1) + "]").text())
 				$("#sentenceview").prepend($(".sentence[data-index=" + ($randindex - 1) + "]").text())
 				$("#sentenceview").show().slideDown()
-
-
-
 			}
 			else {
 
