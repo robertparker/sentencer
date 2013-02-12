@@ -8,8 +8,8 @@ class Sentence < ActiveRecord::Base
 	end
 
 	sentences.each_with_index do |sentence, index|
-		Sentence.create(source: 'Rohit Parulkar', text: sentence.to_s.gsub(/'/,''''), sequence:(index+1))
-	end
+		  Sentence.create(source: 'Rohit Parulkar', text: sentence.to_s.gsub(/'/,''''), sequence:(index+1))
+    end
 
   end
 

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130115182912) do
 
   create_table "sentences", :force => true do |t|
-    t.string   "text"
+    t.text     "text"
     t.string   "source"
     t.integer  "sequence"
     t.datetime "created_at", :null => false
