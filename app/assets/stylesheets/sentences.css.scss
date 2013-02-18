@@ -31,14 +31,16 @@ h1 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
+
+
 .button {
 	color:#52E3F6;
 	font-style:italic;
 	text-decoration: none;
 padding-left: 15px;
 padding-right: 15px;
-padding-top:5px;
-padding-bottom:5px;
+padding-top:10px;
+padding-bottom:10px;
 display: inline-block;
 outline: none;
 text-align: center;
@@ -54,6 +56,17 @@ zoom:1;
 cursor:pointer;
 }
 
+.activebutton {
+	border-color: #ECE47E;
+	border-width: -2px;
+	    box-shadow:0 0 0.2em #ECE47E;
+	        /*margin:-2px;*/
+	    -webkit-transition: all .1s ease-in;
+    -moz-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+
 .button:hover {
 background-image: -webkit-linear-gradient(top, #5B5A4E,#404040);
 }
@@ -61,6 +74,8 @@ background-image: -webkit-linear-gradient(top, #5B5A4E,#404040);
 .button:active {
 	background-image: -webkit-linear-gradient(top, #404040,#5B5A4E,#404040);
 }
+
+
 
 
 #sentenceview {	
